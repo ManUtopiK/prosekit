@@ -30,6 +30,14 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.marks.bold.isActive()"
+      :onClick="() => editor.commands.insertTestVueInput()"
+      tooltip="Test Vue Input"
+    >
+      <div class="i-lucide-text-cursor-input"></div>
+    </Button>
+
+    <Button
+      :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
       :onClick="() => editor.commands.toggleBold()"
       tooltip="Bold"
